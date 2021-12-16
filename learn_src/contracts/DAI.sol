@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -16,7 +16,7 @@ contract DAI {
 
     constructor() {
         owner = payable(msg.sender);
-        daiToken = DaiToken(0x5592EC0cfb4dbc12D3aB100b257153436a1f0FEa); //The DAI contract address on Rinkeby
+        daiToken = DaiToken(0x5592EC0cfb4dbc12D3aB100b257153436a1f0FEa); 
     }
 
     modifier onlyOwner() {
