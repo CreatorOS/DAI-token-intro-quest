@@ -185,7 +185,7 @@ describe("DAI contract", () => {
     })
 })
 ```
-A lot of stuff going on here. The first varaibles are not explicitly initilaized, except ``` ABI ```. Notice that we have to include only the ```transfer``` function specification here, no need for the whole ERC20 ABI as we will only use ```transfer``` later on in testing. The ```beforeEach``` block will run before each testcase. It fetches the artifacts, assigns it to DAI, fetches the signers (your accounts that you included in hardhat.config.js previously), assigns to ```owner``` and ```caller```, and deploys the contract to Rinkeby with your address as a ```msg.sedner```.
+A lot of stuff going on here. The first varaibles are not explicitly initilaized, except ``` ABI ```. Notice that we have to include only the ```transfer``` function specification here, no need for the whole ERC20 ABI as we will only use ```transfer``` later on in testing. The ```beforeEach``` block will run before each testcase. It fetches the artifacts, assigns it to DAI, fetches the signers (your accounts that you included in hardhat.config.js previously), assigns to ```owner``` and ```caller```, and deploys the contract to Rinkeby with your first address as a ```msg.sedner```.
 
 ## Writing the code - Writing the actual tests:
 Inside the main ```describe()``` block mentioned previously (right under ```beforeEach()```), copy and paste this:
@@ -204,7 +204,7 @@ Inside the main ```describe()``` block mentioned previously (right under ```befo
         })
     })
 ```
-The code snippet above covers two test cases. The first one is testing whether the contract owner is set correctly or not, it is supposed to be your address. the second one makes sure that the contract connects to the DAI contract on Rinkeby. This is the third time we see this address. 
+The code snippet above covers two test cases. The first one is testing whether the contract owner is set correctly or not, it is supposed to be your address. The second one makes sure that the contract connects to the DAI contract on Rinkeby. This is the third time we see this address. 
 All is going well? Let's finish off testing with the last and most important testcase, paste this inside the big ```describe```:
 ```js
  describe("Withdrawal", function () {
@@ -230,7 +230,7 @@ Don't worry much about the ```sleep()``` thing, this is just to force our script
  
  2 - Queries your second account's balance.
  
- 3 - Calls ```withdraw()``` with you second account.
+ 3 - Calls ```withdraw()``` with your second account.
  
  4 - Waits a bit to avoid getting outdated data in the next query.
  
